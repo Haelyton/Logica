@@ -12,6 +12,7 @@ public class Vetor {
         this.tamanho = 0;
     }
 
+    //Aula 02
 //    public void adicionar(String elemento) {
 //        for (int i = 0; i <= this.elementos.length; i++) {
 //            if (this.elementos[i] == null) {
@@ -21,14 +22,34 @@ public class Vetor {
 //            }
 //        }
 //    }
+    // Aula 05
+    public String buscar(int posicao) throws IllegalAccessException {
+        if (!(posicao >= 0 && posicao < tamanho)) {
+            throw new IllegalAccessException("pode nao man");
+        }
 
+        return elementos[posicao];
+    }
+
+    //Aula 06
+    public int verificar(String elemento) {
+        for (int i = 0; i <= tamanho; i++) {
+            if (this.elementos[i].equals(elemento)) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    // Aula 03
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder();
 
         s.append("[");
 
-        for (int i = 0; i <= this.tamanho-1; i++) {
+        for (int i = 0; i <= this.tamanho - 1; i++) {
             s.append(this.elementos[i]);
             s.append(", ");
         }
@@ -38,6 +59,14 @@ public class Vetor {
         return s.toString();
     }
 
+    //Aula 07
+    public boolean adicionar(int posicao, String elemento) {
+        for (int i = tamanho-1; i >= posicao; i--) {
+            this.elementos[i+1] = this.elementos[i];
+        }
+
+        return false;
+    }
 
 
 /* criar um metodo no qual vai verificar se o indice e nullo se for nulo adiciona o elemento
