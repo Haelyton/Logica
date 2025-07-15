@@ -101,6 +101,14 @@ public class Exercicio1 {
 
         return elementos[posicao];
     }
+
+    public void removeAllElements() {
+        for (int i = 0; i < tamanho; i++) {
+            elementos[i] = null;
+        }
+
+        tamanho = 0;
+    }
 }
 
 
